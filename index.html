@@ -5,9 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+        integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5"
+        crossorigin="anonymous"/>
+    <title>TO DO LIST</title>
 </head>
 <body>
+    <div id="container">
+        <div id="profile">
+            <h2 id="date"></h2>
+            <h1>Welcome programmer</h1>
+            <span>We will help you meet your goals!!✨</span>
+        </div>
+        <div id="addHomework">
+            <h3>Project Tasks</h3>
+            <p>
+               <label for="newHomework">New homework:</label>
+               <input type="text" id="newHomework" name="task">
+               <i id="enter" class="fa-solid fa-circle-plus"></i>
+            </p>
+            <p class="Date">
+                <label for="date"></label>
+                <input type="date" id="date" name="date">
+            </p>
+            <p> 
+               <select name="priorities" id="levelPriority">
+                    <option value="" disabled selected>Priority</option>               
+                    <option value="important">Important</option>
+                    <option value="Normal">Normal</option>
+                </select>     
+            </p> 
+        </div>
+        <div id="homework">
+            <h3>These are your tasks</h3>
+            <ul id="list">
+                <li> 
+                    <i id="0" data="check" class="far fa-circle co" ></i>
+                    <p class="text">pasear al perro</p>
+                    <i data="remove" id="0" class="fa-solid fa-trash-can"></i> 
+                </li>
+            </ul>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
