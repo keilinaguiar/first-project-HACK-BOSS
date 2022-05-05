@@ -12,15 +12,15 @@ const inputAdd = document.querySelector('#newHomework');
 // EL INPUT DEL CALENDARIO
 const inputDate = document.querySelector('#date');
 // LAS CLASES DE LOS BOTONES PARA MARCAR COMO REALIZADO O NO
-const check ="fa-check-circle";
-const uncheck = "a-circle";
+const check = 'fa-check-circle';
+const uncheck = 'a-circle';
 // LA CLASE DEL SUBRAYADO
-const lineThrough = "line-through";
+const lineThrough = 'line-through';
 // el id que hara que cammbie
 let id = 0;
 
 //CREAMOS UNA FUNCION PARA AGREGAR LAS TAREAS
-function addHomework(homework,id, check, uncheck) {
+function addHomework(homework, id, check, uncheck) {
     const element = `<li id="element> 
                            <i id="0" data="check" class="far fa-circle co" ></i>
                            <p class="text">${homework} </p>
@@ -29,23 +29,22 @@ function addHomework(homework,id, check, uncheck) {
     list.insertAdjacentHTML('beforeend', element);
 }
 
-
 Enter.addEventListener('click', () => {
     const homework = inputAdd.value;
     if (homework) {
         addHomework(homework, id, false, false);
     }
-    inputAdd.value = ''
-    id++
+    inputAdd.value = '';
+    id++;
 });
 
-document.addEventListener("keyup", function(e){
-    if (e.key === "Enter") {
+document.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
         const homework = inputAdd.value;
-    if (homework) {
-        addHomework(homework, );
+        if (homework) {
+            addHomework(homework);
+        }
+        inputAdd.value = '';
+        id++;
     }
-    inputAdd.value = '';
-    id++
-    }
-})
+});
