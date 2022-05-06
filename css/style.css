@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2? family= Merriweather:ital,wght@1,300;1,400;1,700;1,900 &familia = Tela decorativa y display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200;1,300;1,400;1,500&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -8,13 +8,13 @@
     --white: #fafafb;
     --purple: #e24fe7;
     --blue-light: #1a97a0;
-    --blue-dark: #3126d1;
+    --blue-dark: #7269f3;
     --green: #30e0c3;    
 }
 body{
     background: linear-gradient(to bottom, var(--purple), var(--blue-light));
     height: 100vh;
-    font-family: 'Tapestry', cursive;
+    font-family: 'Roboto Mono', monospace;
     color: var(--white)
 }
 .container{
@@ -36,7 +36,7 @@ margin: 0.5rem 0;
 .profile span{
 letter-spacing: 1px;
 }
-#date{
+#dateHeader{
     margin: 2rem 0;
     font-size: 17px;
 }
