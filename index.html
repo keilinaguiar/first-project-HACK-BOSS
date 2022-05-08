@@ -19,23 +19,18 @@
             <h1>Welcome programmer</h1>
             <span>We will help you meet your goals!!✨</span>
         </div>
-        <div class="addHomework">
+        <form class="addHomework" id="homework-form">
             <p>
                <input type="text" id="newHomework" name="task" placeholder="Write a task">
-               <i id="enter" class="fa-solid fa-circle-plus"></i>
-            </p>
-            <p class="dateHomework">
-                <label for="date"></label>
-                <input type="date" id="date" name="date">
+               <button type="submit" class="form-button-add"><i id="enter" class="fa-solid fa-circle-plus"></i></button>
             </p>
             <p> 
-               <select name="priorities" id="levelPriority">
-                    <option value="" disabled selected>Priority</option>               
+               <select name="priorities" id="levelPriority">             
                     <option value="important">Important</option>
-                    <option value="Normal">Normal</option>
+                    <option value="Normal" selected>Normal</option>
                 </select>     
             </p> 
-        </div>
+        </form>
         <div class="homework">
             <h3>These are your tasks</h3>
             <ul id="list">
