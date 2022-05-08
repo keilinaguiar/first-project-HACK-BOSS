@@ -52,7 +52,7 @@ body {
     margin: 1rem;
 }
 .addHomework > p:first-of-type > input {
-    width: 176px;
+    width: 120px;
     height: 40px;
     border: solid 2px #000;
     border-radius: 8px;
@@ -141,6 +141,11 @@ body {
 
 .todo-item {
     border: 3px solid #0f0;
+}
+@media (min-width: 400px){
+    .addHomework > p:first-of-type > input{
+        width: 210px;
+    }
 }
 @media (min-width: 700px) {
     .addHomework > p:first-of-type > input {
