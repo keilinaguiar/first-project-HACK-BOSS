@@ -15,13 +15,14 @@ body {
     background: linear-gradient(to bottom, var(--purple), var(--blue-light));
     font-family: 'Roboto Mono', monospace;
     color: var(--white);
-    height: 100vw;
+    height: 100vh;
 }
 .container {
-    max-width: 80%;
+    max-width: 100%;
     width: 400px;
     height: 600px;
     margin: 0 auto;
+    padding: 0 30px;
 }
 /***************
 *****Profile****
