@@ -18,22 +18,18 @@ const Uncheck = 'fa-circle';
 // LA CLASE DEL SUBRAYADO
 const lineThrough = 'line-through';
 
-// el id que hara que cambie
-let id = 0;
+//ARRAY LISTA
 let LIST = [];
 
 //FUNCION QUE GUARDA EN EL LOCAL STORAGE
 const addLocal = () => localStorage.setItem('todoList', JSON.stringify(LIST));
 
 const date = new Date();
-
-
 //Agregar al html la fecha del dia
 dateHeader.innerHTML = date.toLocaleDateString('en-madrid', {
     weekday: 'long',
     month: 'short',
     day: 'numeric',
-    year: 'numeric',
 });
 
 //CREAMOS UNA FUNCION PRINCIPAL DONDE CREAREMOS LA INTERACCION DE TODAS LAS TAREAS QUE SE AGREGUEN
@@ -61,16 +57,29 @@ function checkHomework(element) {
     element.classList.toggle(Uncheck);
     element.parentNode.querySelector('.text').classList.toggle(lineThrough);
     const index = element.getAttribute('data-id');
-    LIST[index].check = LIST[index].check ? false : true;
+
+    //BUCLE QUE SE ENCARGA DE BUSCAR EL ELEMENTO QUE TIENE EL ID INDICADO PARA CAMBIAR SU PROPIEDAD CHECK
+    LIST.forEach((item) => {
+        if (index == item.id) {
+            item.check = item.check ? false : true;
+        }
+    });
+
     addLocal();
 }
 
 // FUNCIÓN PARA ELIMINAR TAREAS
 function removeHomework(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
-    const index = element.getAttribute('data-id');
-    LIST[index].remove = true;
+    const id = element.getAttribute('data-id');
+
+    //SACAMOS EL INDICE EN EL QUE SE ENCUENTRA EL ELEMENTO CON EL ID QUE BUSCAMOS
+    const index = LIST.findIndex((todo) => {
+        return todo.id === id;
+    });
+
     LIST.splice(index, 1);
+
     addLocal();
 }
 
@@ -83,6 +92,8 @@ function loadLocal() {
 
         todoList.forEach((item) => {
             const date = new Date(item.date);
+
+            //AÑADIMOS ELEMENTO
             addHomework(
                 item.content,
                 item.id,
@@ -114,6 +125,7 @@ document.getElementById('homework-form').addEventListener('submit', (e) => {
     const homework = inputAdd.value;
     if (homework) {
         const priority = priorityElement.value;
+        const id = new Date().getTime().toString(36);
 
         const fecha = new Date();
         addHomework(homework, id, false, false, fecha, priority);
@@ -127,8 +139,6 @@ document.getElementById('homework-form').addEventListener('submit', (e) => {
         });
     }
     inputAdd.value = '';
-    id++;
 
     addLocal();
 });
-
